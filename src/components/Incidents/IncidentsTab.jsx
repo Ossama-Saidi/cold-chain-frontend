@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Download } from 'lucide-react';
-import IncidentTable from './IncidentTable';
+// import IncidentTable from './IncidentTable';
+import IncidentCards from './IncidentCards';
 import { exportCSV } from '../../utils/helpers';
 import { fetchIncidents } from '../../services/api';
 
@@ -35,7 +36,7 @@ const IncidentsTab = () => {
         </button>
       </div>
 
-      <IncidentTable incidents={incidents} />
+      <IncidentCards incidents={incidents} />
     </div>
   );
 };

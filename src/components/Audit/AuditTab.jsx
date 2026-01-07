@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Download } from 'lucide-react';
-import AuditTable from './AuditTable';
+// import AuditTable from './AuditTable';
+import AuditCards from './AuditCards';
 import { exportCSV } from '../../utils/helpers';
 import { fetchAuditLogs } from '../../services/api';
 
@@ -25,7 +26,7 @@ const AuditTab = () => {
         </button>
       </div>
 
-      <AuditTable auditLogs={auditLogs} />
+      <AuditCards auditLogs={auditLogs} />
     </div>
   );
 };

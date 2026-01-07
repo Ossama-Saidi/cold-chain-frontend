@@ -1,7 +1,9 @@
 import axios from "axios";
 
 // Base URL du backend Django
-const API_BASE_URL = "https://cold-chain-monitoring.onrender.com/api";
+// const API_BASE_URL = "https://cold-chain-monitoring.onrender.com/api";
+const API_BASE_URL = "http://127.0.0.1:8000/api";
+
 // export const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 
@@ -90,13 +92,13 @@ export const fetchAuditLogs = async () => {
 // ------------------------
 export const fetchIncidents = async () => {
   try {
-  const res = await axios.get(`${API_BASE_URL}/mesures/list/`);
-  return res.data.filter(m =>
-    m.temperature < 2 || m.temperature > 8
-  );
+    const res = await axios.get(`${API_BASE_URL}/incidents/list/`);
+    return res.data;
   } catch (err) {
     console.error("Erreur fetchIncidents:", err);
     return [];
   }
 };
+
+
 
